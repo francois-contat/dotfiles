@@ -1,0 +1,30 @@
+! Xterm settings
+
+Xterm*scrollBar: false
+Xterm*vt100.scrollBar: false
+Xterm*background: black
+Xterm*foreground: white
+Xterm*multiScroll: on
+Xterm*jumpScroll: on
+Xterm*SaveLines: 10000
+XTerm*utf8: 1
+
+
+! URxvt setting
+
+! pattern matching declaration
+URxvt*perl-ext-common: default,matcher
+URxvt*matcher.button: 1
+
+! match for spotify using dbus
+URxvt.matcher.pattern.0: \\b(spotify:[\\w:]+)
+URxvt.matcher.launcher.0: /usr/bin/dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.OpenUri string:$1
+! match for http/https/ftp links
+URxvt.matcher.pattern.1: \\b(http|https|ftp):\/\/(?!open\\.spotify.*)[\\w\\-\\@;\\/?:&=%\\$.+!*\x27,~#]+
+URxvt.matcher.launcher.1: /usr/bin/google-chrome
+! color settings
+URxvt.colorUL: pink
+URxvt*foreground: #f2f2f2
+URxvt*background: #000000
+! removing the scrollbar
+URxvt*scrollBar: false
