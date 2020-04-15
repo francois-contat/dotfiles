@@ -1,0 +1,24 @@
+au BufRead,BufNewFile *.psp set filetype=psp
+syntax on
+set background=dark
+set t_Co=256
+set ts=4
+set shiftwidth=4
+set expandtab 
+set autoindent
+autocmd BufReadPost *
+  \ if line("'\"") > 1 && line("'\"") <= line("$") |
+  \  exe "normal! g`\"" |
+  \ endif
+colorscheme 256-jungle
+"au FileType perl colorscheme 256-jungle
+"au FileType perl colorscheme adrian
+"au FileType python colorscheme adrian
+"au FileType tex set spell spelllang=fr tw=78
+syntax on
+hi MayanSmokeCursorLine     guifg=NONE   guibg=yellow  gui=NONE 
+hi MayanSmokeSearch         guifg=white  guibg=blue    gui=NONE
+hi MayanSmokeSpecialKey     guifg=NONE   guibg=green   gui=NONE 
+let g:mayansmoke_cursor_line_visibility = 2  " higher visibility 
+let g:mayansmoke_search_visibility = 4 " highest visibility 
+let g:mayansmoke_special_key_visibility = 2  " higher visibility 

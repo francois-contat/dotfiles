@@ -1,0 +1,96 @@
+!--- Font and font size
+
+#URxvt*.font:  xft:Monospace:pixelsize=26
+URxvt*.font:  xft:Monospace:pixelsize=14
+
+
+
+
+!URxvt.font: -misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso10646-1
+
+URxvt.perl-ext-common:      default,matcher
+
+!--- General
+
+URxvt.buffered:             true
+URxvt.urlLauncher:          /usr/local/bin/my_firefox
+URxvt.matcher.button:       1
+URxvt.geometry:             100x45
+!--- Scrolling
+
+URxvt*.scrollTtyOutput:     false
+URxvt*.scrollWithBuffer:    false
+URxvt*.scrollTtyKeypress:   true
+URxvt.secondaryScroll:      true
+URxvt*scrollstyle:          plain
+URxvt*saveLines:            20000
+URxvt.scrollBar_right:      true
+URxvt.scrollBar:            false
+
+!-- Shading and Fading
+
+URxvt.transparent:          true
+URxvt.shading:              35
+
+! frouny URxvt setting
+
+! pattern matching declaration
+URxvt*matcher.button: 1
+
+! match for spotify using dbus
+URxvt.matcher.pattern.0: \\b(spotify:[\\w:]+)
+URxvt.matcher.launcher.0: /usr/bin/dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.OpenUri string:$1
+! match for http/https/ftp links
+URxvt.matcher.pattern.1: \\b(http|https|ftp):\/\/(?!open\\.spotify.*)[\\w\\-\\@;\\/?:&=%\\$.+!*\x27,~#]+
+URxvt.matcher.launcher.1: /usr/bin/chromium
+URxvt.matcher.launcher.2: /dev/null
+
+! color settings
+URxvt.colorUL: pink
+
+
+Xautolock.time: 5
+Xautolock.notify: 60
+Xautolock.locker: /usr/bin/i3lock
+
+!--- Tabbing Menu colors
+
+!URxvt.tabbed.tabbar-bg:     0
+!URxvt.tabbed.tabbar-fg:     6
+!URxvt.tabbed.tab-bg:        0
+!URxvt.tabbed.tab-fg:        5
+
+!--- Colors
+
+URxvt.background:           black
+URxvt.underlineColor:       #4ad5e1
+
+URxvt.pointerColor:         #dc74d1
+URxvt.color0:               #000000
+URxvt.color1:               #dc74d1
+URxvt.color2:               #0eb8c7
+URxvt.color3:               #dfe37e
+URxvt.color5:               #9e88f0
+URxvt.color6:               #73f7ff
+URxvt.color7:               gray90
+URxvt.color8:               #8b8f93
+URxvt.color9:               #dc74d1
+URxvt.color10:              #0eb8c7
+URxvt.color11:              #dfe37e
+URxvt.color12:              #8080ff
+URxvt.color13:              #9e88f0
+URxvt.color14:              #73f7ff
+URxvt.color15:              #e1dddd
+URxvt.foreground:           #c0e5f1
+URxvt.cursorColor:          #e0e080
+
+! Xterm settings
+
+Xterm*scrollBar: false
+Xterm*vt100.scrollBar: false
+Xterm*background: black
+Xterm*foreground: white
+Xterm*multiScroll: on
+Xterm*jumpScroll: on
+Xterm*SaveLines: 10000
+XTerm*utf8: 1
