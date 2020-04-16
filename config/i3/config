@@ -14,8 +14,8 @@ set $mod Mod4
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
-font pango:Verdana Regular 8
+font pango:DejaVu Sans Mono 11
+font pango:Verdana Regular 11
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -40,8 +40,6 @@ bindsym $mod+d exec dmenu_run
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
-# alsamixer binding
-
 # Control for current player
 # old bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
 # old bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
@@ -53,29 +51,18 @@ bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 
+# screen backlight
+
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+
+
 # screen lock
-bindsym $mod+l exec i3lock -t -i /home/fco/.i3/hotline.png
-
-# restore workspaces on desktop with keepass, etc
-
-exec --no-startup-id "/bin/bash /home/fco/.i3/launch.sh"
-bindsym $mod+F6 exec --no-startup-id "/bin/bash /home/fco/.i3/launch.sh"
-#exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/fco/.i3/new-workspace1.json'"
-
+bindsym $mod+l exec i3lock --tiling -i $(ls /home/frouny/Documents/backgrounds/chromecast-backgrounds/files/*.png | shuf | head -1)
 
 # Browser instances
 
-#bindsym $mod+F1 exec firefox-esr -p "Mail" # Mail
-#bindsym $mod+F2 exec firefox-esr -p "Facebook" # Facebook
-#bindsym $mod+F3 exec firefox-esr -p "Peonlab" # Peonlab
-#bindsym $mod+F4 exec firefox-esr -p "Internet" # Internet
-bindsym $mod+F5 exec iceweasel -P default # Internet
-bindsym $mod+F1 exec google-chrome --profile-directory="Profile 1" # Mail
-bindsym $mod+F2 exec google-chrome --profile-directory="Profile 2" # Facebook
-bindsym $mod+F3 exec google-chrome --profile-directory="Profile 3" # Peonlab
-bindsym $mod+F4 exec google-chrome --profile-directory="Profile 4" # Internet
-bindsym $mod+F7 exec google-chrome --profile-directory="Profile 6" # Internet
-#bindsym $mod+F5 exec iceweasel -P default # Internet
+bindsym $mod+F4 exec chromium -p "Internet" # Internet
 
 # change focus
 bindsym $mod+j focus left
@@ -199,7 +186,7 @@ bar {
           active_workspace #333333 #222222 #888888
           focused_workspace  #4c7899 #285577 #ffffff
         }
-    status_command i3blocks
+    status_command i3status
 }
 
 
