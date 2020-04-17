@@ -14,8 +14,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 11
-font pango:Verdana Regular 11
+font pango:DejaVu Sans Mono, FontAwesome 10
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -58,7 +57,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 
 
 # screen lock
-bindsym $mod+l exec i3lock --tiling -i $(ls /home/frouny/Documents/backgrounds/chromecast-backgrounds/files/*.png | shuf | head -1)
+bindsym $mod+l exec "i3lock --tiling -i $(ls /home/frouny/Documents/backgrounds/chromecast-backgrounds/files/*.png | shuf | head -1) && feh --bg-fill $(ls /home/frouny/Documents/backgrounds/chromecast-backgrounds/files/*.png | shuf | head -1)"
 
 # Browser instances
 
@@ -171,9 +170,10 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
+exec --no-startup-id feh --randomize --bg-fill /home/frouny/Documents/backgrounds/chromecast-backgrounds/files/*
 
 bar {
+    font pango:monospace 10, FontAwesome 10
     tray_padding 2
     tray_output HDMI2
     colors {
