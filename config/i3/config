@@ -170,6 +170,11 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+# Permit to change wallpaper at anytime
+bindsym $mod+shift+b exec feh --randomize --bg-fill /home/frouny/Documents/backgrounds/chromecast-backgrounds/files/*
+
+# Set the background at startup
 exec --no-startup-id feh --randomize --bg-fill /home/frouny/Documents/backgrounds/chromecast-backgrounds/files/*
 
 bar {
