@@ -11,3 +11,8 @@ then
     mv ${HOME}/.config/i3/config ${HOME}/.config/i3/config.old
 fi
 ${LN} -s ${PWD}/i3/config ${HOME}/.config/i3/config
+if [ -e ${HOME}/.config/i3blocks/config ]
+then
+    mv ${HOME}/.config/i3blocks/config ${HOME}/.config/i3blocks/config.old
+fi
+${LN} -s ${PWD}/i3blocks/config ${HOME}/.config/i3blocks/config

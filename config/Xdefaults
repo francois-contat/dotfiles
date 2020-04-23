@@ -2,6 +2,7 @@
 
 #URxvt*.font:  xft:Monospace:pixelsize=26
 URxvt*.font:  xft:Monospace:pixelsize=14
+URxvt*.font:  xft:mononoki Nerd Font Mono:pixelsize=17
 
 
 
