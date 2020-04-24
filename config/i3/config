@@ -182,7 +182,7 @@ bar {
    # font pango:monospace 10, FontAwesome 10
     font pango:Ubuntu Mono Bold Nerd Font Complete Mono 14
     tray_padding 2
-    tray_output HDMI2
+    #tray_output eDP1
     colors {
           background #000000#000022
           statusline #ffffff#ffffff
